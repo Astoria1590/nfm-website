@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQs | New Faith Ministries</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Find answers to common questions about New Faith Ministries, including service times, giving options, and how to get involved." />
+  <meta name="keywords" content="New Faith Ministries FAQ, service times, give, volunteer, contact, Brice church" />
+  <meta name="author" content="New Faith Ministries" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FAQs | New Faith Ministries" />
+  <meta property="og:description" content="Got questions? We've got answers. Learn more about services, ministries, giving, and how to connect with us." />
+  <meta property="og:image" content="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://newfaithministriesorg.faith/faq.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAQs | New Faith Ministries" />
+  <meta name="twitter:description" content="Answers to frequently asked questions at New Faith Ministries." />
+  <meta name="twitter:image" content="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" />
+
+  <!-- Google Custom Search Engine -->
+  <script async src="https://cse.google.com/cse.js?cx=42580b5a5ee3e43fd"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="serve.css" />
+  <link rel="stylesheet" href="faq.css" />
+  <link rel="stylesheet" href="contact-us.css" />
+  <link rel="stylesheet" href="give-now.css" />
+  <link rel="stylesheet" href="give.css" />
+  <link rel="stylesheet" href="new-here.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <a href="/" class="mobile-logo-link">
+        <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries logo" class="logo" />
+      </a>
+      <div class="brand-text">
+        <h1 class="pulse-title">New Faith Ministries</h1>
+        <p>Feeding God's People Spiritually and Physically</p>
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger-btn">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="nfm-nav" id="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="new-here.html" class="nav-link">NEW HERE?</a>
+      <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
+      <a href="give.html" class="nav-link">Give</a>
+      <a href="serve.html" class="nav-link">Serve</a>
+      <a href="contact-us.html" class="nav-link">Contact Us</a>
+      <a class="nav-link church-center" href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/me">Church Center</a>
+    </nav>
+  </header>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" aria-labelledby="faq-title">
+    <h2 class="faq-title" id="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-grid" id="faq-container"></div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="page-btn active" data-page="1">1</button>
+      <button class="page-btn" data-page="2">2</button>
+    </div>
+  </section>
+
+  <script>
+    const faqs = [
+      { q: "What time are Sunday services?", a: "We meet every Sunday at 10 AM." },
+      { q: "Is there something for kids?", a: "Yes! We have a safe and fun kids ministry during service." },
+      { q: "How can I get involved or serve?", a: "Visit our 'Serve' page to get connected with a ministry team." },
+      { q: "Do I have to dress a certain way?", a: "Not at all. Come as you are — God looks at the heart." },
+      { q: "How do I use Stripe to give online?", a: "Go to our Give page and choose a donation amount. Stripe securely processes your gift." },
+      { q: "How do I cancel a recurring donation?", a: "Check your Stripe receipt or email us and we’ll help cancel it for you." },
+      { q: "How do I give if I prefer cash/check?", a: "We accept offerings during service or by mail to our campus address." },
+      { q: "How do I serve or volunteer at NFM?", a: "Fill out the volunteer form or speak with a leader on Sunday." },
+      { q: "Where is New Faith Ministries located?", a: "We’re located in Columbus, OH. Visit our Contact page for directions." },
+      { q: "Do I need to register to attend service?", a: "No registration required — everyone is welcome!" },
+      { q: "Are there midweek Bible studies?", a: "Yes! Check our calendar for current group schedules." },
+      { q: "Can I meet with a pastor for prayer?", a: "Yes. Fill out the contact form and we’ll connect you directly." },
+      { q: "Is there parking available?", a: "Yes, plenty of on-site parking is available for free." },
+      { q: "Is your building accessible?", a: "Absolutely. We are wheelchair accessible and have reserved seating if needed." },
+      { q: "What denomination is NFM?", a: "We are a non-denominational Christian church centered on the Bible." },
+      { q: "How do I join a small group?", a: "Visit the Groups page or sign up during service." },
+      { q: "Can I watch messages online?", a: "Yes! Check out our Media section for past sermons." },
+      { q: "What ministries are available for teens?", a: "We offer youth services, events, and mentorship." },
+      { q: "How do I contact someone directly?", a: "Use the contact form or email contactus@newfaithministriesorg.faith." },
+      { q: "Can I dedicate my child at NFM?", a: "Yes — sign up online or talk to a leader on Sunday." }
+    ];
+
+    const perPage = 10;
+    const faqContainer = document.getElementById('faq-container');
+    const buttons = document.querySelectorAll('.page-btn');
+
+    function renderFAQs(page) {
+      faqContainer.innerHTML = "";
+      const start = (page - 1) * perPage;
+      const end = start + perPage;
+      faqs.slice(start, end).forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'faq-item';
+        div.innerHTML = `<h4>${item.q}</h4><p>${item.a}</p>`;
+        faqContainer.appendChild(div);
+      });
+      buttons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.page-btn[data-page="${page}"]`).classList.add('active');
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => renderFAQs(Number(btn.dataset.page)));
+    });
+
+    renderFAQs(1);
+  </script>
+
+  <!-- Footer -->
+  <footer class="nfm-footer">
+    <div class="footer-container">
+      <!-- Logo + Socials -->
+      <div class="footer-brand">
+        <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries Logo" class="footer-logo" />
+        <h2>New Faith Ministries</h2>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="footer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="new-here.html" class="nav-link">NEW HERE?</a>
+        <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
+        <a href="give.html" class="nav-link">Give</a>
+        <a href="serve.html" class="nav-link">Serve</a>
+        <a href="contact-us.html" class="nav-link">Contact Us</a>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <p><i class="fas fa-map-marker-alt"></i> 2879 Brice Road, Brice</p>
+        <p><i class="fas fa-clock"></i> Sunday 11AM ET</p>
+        <p><i class="fas fa-envelope"></i> ContactUs@newfaithministriesorg.faith</p>
+        <p><i class="fas fa-phone"></i> </p>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> New Faith Ministries. All rights reserved.</p>
+      <p class="footer-disclaimer">
+        Disclaimer: The content on this site is provided for spiritual enrichment and community engagement purposes only. It does not constitute legal or professional advice.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="script.js" defer></script>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+</body>
+</html>

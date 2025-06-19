@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search Results | New Faith Ministries</title>
+
+  <!-- Google Custom Search Engine script -->
+  <script async src="https://cse.google.com/cse.js?cx=42580b5a5ee3e43fd"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="search-list.css" />
+  <link rel="stylesheet" href="serve.css" />
+  <link rel="stylesheet" href="calendar.css" />
+  <link rel="stylesheet" href="faq.css" />
+  <link rel="stylesheet" href="contact-us.css" />
+  <link rel="stylesheet" href="give-now.css" />
+  <link rel="stylesheet" href="give.css" />
+  <link rel="stylesheet" href="new-here.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <a href="/" class="mobile-logo-link">
+        <img
+          src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg"
+          alt="New Faith Ministries logo"
+          class="logo"
+        />
+      </a>
+      <div class="brand-text">
+        <h1 class="pulse-title">New Faith Ministries</h1>
+        <p>Feeding God's People Spiritually and Physically</p>
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" role="button" tabindex="0" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="nfm-nav" id="nav-menu" role="navigation" aria-label="Primary navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="new-here.html" class="nav-link">NEW HERE?</a>
+      <a
+        href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos"
+        class="nav-link"
+        >Watch Live</a
+      >
+      <a href="give.html" class="nav-link">Give</a>
+      <a href="serve.html" class="nav-link">Serve</a>
+      <a href="contact-us.html" class="nav-link">Contact Us</a>
+      <a
+        class="nav-link church-center"
+        href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/me"
+        >Church Center</a
+      >
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <h1>Search Results</h1>
+    <div class="gcse-searchresults-only"></div>
+  </main>
+
+  <script>
+    const hamburger = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        hamburger.click();
+      }
+    });
+  </script>
+</body>
+</html>

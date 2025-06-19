@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serve | New Faith Ministries</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Get involved and serve at New Faith Ministries. Join a team and make a difference in our church and community." />
+  <meta name="keywords" content="New Faith Ministries, Serve, Volunteer, Join a Team, Church Teams, Columbus Church, Kids Ministry, Worship Team, Prayer" />
+  <meta name="author" content="New Faith Ministries" />
+  <meta property="og:title" content="Serve | New Faith Ministries" />
+  <meta property="og:description" content="Volunteer with New Faith Ministries and join a team to serve your community and grow your faith." />
+  <meta property="og:image" content="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://newfaithministriesorg.faith/serve.html" />
+
+  <!-- Google Custom Search Engine -->
+  <script async src="https://cse.google.com/cse.js?cx=42580b5a5ee3e43fd"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="join-a-team.css" />
+  <link rel="stylesheet" href="serve.css" />
+  <link rel="stylesheet" href="contact-us.css" />
+  <link rel="stylesheet" href="give-now.css" />
+  <link rel="stylesheet" href="give.css" />
+  <link rel="stylesheet" href="new-here.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <a href="/" class="mobile-logo-link">
+        <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries logo" class="logo" />
+      </a>
+      <div class="brand-text">
+        <h1 class="pulse-title">New Faith Ministries</h1>
+        <p>Feeding God's People Spiritually and Physically</p>
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger-btn">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="nfm-nav" id="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="new-here.html" class="nav-link">NEW HERE?</a>
+      <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
+      <a href="give.html" class="nav-link">Give</a>
+      <a href="serve.html" class="nav-link">Serve</a>
+      <a href="contact-us.html" class="nav-link">Contact Us</a>
+      <a class="nav-link church-center" href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/me">Church Center</a>
+    </nav>
+  </header>
+
+  <!-- Serve Section -->
+  <section class="serve-section">
+    <div class="serve-container">
+      <h2 class="serve-title">Serve at New Faith Ministries</h2>
+      <p class="serve-subtitle">Fill out the form below to get started with volunteering.</p>
+
+      <form class="serve-form" action="https://formspree.io/f/manjbayz" method="POST">
+        <input type="hidden" name="_replyto" />
+
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="area">Which area would you like to serve in?</label>
+          <select id="area" name="serving-area" required>
+            <option value="" disabled selected>Select an area</option>
+            <option value="Guest Services">Guest Services</option>
+            <option value="Kids Ministry">Kids Ministry</option>
+            <option value="Worship Team">Worship Team</option>
+            <option value="Tech/Media">Tech & Media</option>
+            <option value="Prayer Team">Prayer Team</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Why do you want to serve?</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Send</span>
+          <span class="btn-loader hidden"></span>
+        </button>
+
+        <div id="form-success" class="form-success hidden">
+          ✅ Thank you for your willingness to serve! We'll reach out shortly.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Form Submission Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector(".serve-form");
+      const btnText = form.querySelector(".btn-text");
+      const loader = form.querySelector(".btn-loader");
+      const success = document.getElementById("form-success");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const message = form.message.value.trim();
+        form._replyto.value = email;
+
+        if (!name || !email || !phone || !message) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+
+        btnText.textContent = "Sending...";
+        loader.classList.remove("hidden");
+        form.querySelector(".submit-btn").disabled = true;
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.reset();
+            success.classList.remove("hidden");
+            success.classList.add("show");
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
+        } catch (err) {
+          alert("Server error. Please try later.");
+        }
+
+        btnText.textContent = "Send";
+        loader.classList.add("hidden");
+        form.querySelector(".submit-btn").disabled = false;
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="nfm-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries Logo" class="footer-logo" />
+        <h2>New Faith Ministries</h2>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="new-here.html" class="nav-link">NEW HERE?</a>
+        <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
+        <a href="give.html" class="nav-link">Give</a>
+        <a href="serve.html" class="nav-link">Serve</a>
+        <a href="contact-us.html" class="nav-link">Contact Us</a>
+      </div>
+
+      <div class="footer-contact">
+        <p><i class="fas fa-map-marker-alt"></i> 2879 Brice Road, Brice</p>
+        <p><i class="fas fa-clock"></i> Sunday 11AM ET</p>
+        <p><i class="fas fa-envelope"></i> ContactUs@newfaithministriesorg.faith</p>
+        <p><i class="fas fa-phone"></i> </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> New Faith Ministries. All rights reserved.</p>
+      <p class="footer-disclaimer">
+        Disclaimer: The content on this site is provided for spiritual enrichment and community engagement purposes only. It does not constitute legal or professional advice.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Utilities -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="script.js" defer></script>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+</body>
+</html>
