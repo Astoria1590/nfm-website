@@ -1,11 +1,5 @@
 const teamData = [
   {
-    name: "Larry Caldwell",
-    title: "Founder",
-    img: "https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/pastor-larry-caldwell-edited.png",
-    desc: "Larry Caldwell is the visionary founder of New Faith Ministries, passionately leading with faith and compassion."
-  },
-  {
     name: "Eric M",
     title: "Web Developer",
     img: "https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/51dc2e06-47ef-4f58-8b30-622b6577dea4-1.jpg",
