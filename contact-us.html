@@ -1,231 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>New Here | New Faith Ministries</title>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="New to New Faith Ministries? Reach out, connect, and learn how to take your next step with us. We’re here for you." />
-  <meta name="keywords" content="New Faith Ministries, New Here, contact, church welcome, connect, prayer, Brice Ohio church" />
-  <meta name="author" content="New Faith Ministries" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="New Here | New Faith Ministries" />
-  <meta property="og:description" content="Have questions or prayer requests? New Faith Ministries is here for you. Get in touch today." />
-  <meta property="og:image" content="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://newfaithministriesorg.faith/new-here.html" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="New Here | New Faith Ministries" />
-  <meta name="twitter:description" content="Have a question or need prayer? New Faith Ministries would love to hear from you." />
-  <meta name="twitter:image" content="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" />
-
-  <!-- Google Custom Search -->
-  <script async src="https://cse.google.com/cse.js?cx=42580b5a5ee3e43fd"></script>
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="serve.css" />
-  <link rel="stylesheet" href="calendar.css" />
-  <link rel="stylesheet" href="faq.css" />
-  <link rel="stylesheet" href="contact-us.css" />
-  <link rel="stylesheet" href="give-now.css" />
-  <link rel="stylesheet" href="give.css" />
-  <link rel="stylesheet" href="new-here.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Martinez Web Solutions for inquiries, estimates, or support." />
+  <meta name="keywords" content="contact, web developer, Martinez Web Solutions, support" />
+  <meta name="author" content="Martinez Web Solutions" />
+  <title>Contact | Martinez Web Solutions</title>
+  <link rel="stylesheet" href="contact.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="brand">
-      <a href="/" class="mobile-logo-link">
-        <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries logo" class="logo" />
-      </a>
-      <div class="brand-text">
-        <h1 class="pulse-title">New Faith Ministries</h1>
-        <p>Feeding God's People Spiritually and Physically</p>
-      </div>
+  <nav class="navbar">
+    <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+      <img src="https://res.cloudinary.com/dbeifkzba/image/upload/v1750435760/Tech_Business_Logo_with_Blue_and_Teal_Colors_1_pmrsd5.png" alt="Martinez Web Solutions Logo" />
+      <span style="color: inherit;">Martinez Web Solutions</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </nav>
 
-    <div class="hamburger" id="hamburger-btn">
-      <span></span><span></span><span></span>
+  <header class="contact-hero">
+    <video autoplay muted loop class="bg-video">
+      <source src="video/contact-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay">
+      <h1>Contact Me</h1>
+      <p>Let’s bring your vision to life. I typically respond within 72 hours.</p>
     </div>
-
-    <nav class="nfm-nav" id="nav-menu">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="new-here.html" class="nav-link">NEW HERE?</a>
-      <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
-      <a href="give.html" class="nav-link">Give</a>
-      <a href="serve.html" class="nav-link">Serve</a>
-      <a href="contact-us.html" class="nav-link">Contact Us</a>
-      <a class="nav-link church-center" href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/me">Church Center</a>
-    </nav>
   </header>
 
-  <!-- Contact Section -->
-  <section class="contact-section" aria-label="Contact Form and Actions">
-    <div class="contact-overlay">
-      <h2 class="contact-title">We’re Here for You</h2>
-      <p class="contact-subtitle">Whether you need prayer, have a question, or just want to talk — we’d love to hear from you.</p>
+  <main class="contact-container">
+    <form action="https://formspree.io/f/mwpbnzpe" method="POST" class="contact-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
 
-      <!-- Action Buttons -->
-      <section class="action-buttons-section">
-        <div class="action-buttons-wrapper">
-          <a href="faq.html" class="action-button" aria-label="Go to FAQs">
-            <div class="icon">
-              <img src="https://cdn-icons-png.flaticon.com/512/1008/1008963.png" alt="FAQ Icon" />
-            </div>
-            <span>FAQs</span>
-          </a>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
 
-          <a href="calendar.html" class="action-button" aria-label="Go to Calendar">
-            <div class="icon">
-              <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Calendar Icon" />
-            </div>
-            <span>Calendar</span>
-          </a>
-        </div>
-      </section>
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
 
-      <!-- Contact Form -->
-      <form class="contact-form" action="https://formspree.io/f/xvgrqwey" method="POST" aria-label="Contact Form">
-        <input type="hidden" name="_replyto" />
+      <label for="reason">Reason for Contact</label>
+      <select id="reason" name="reason" required>
+        <option value="">-- Select a reason --</option>
+        <option value="quote">Request a Quote</option>
+        <option value="support">Website Support</option>
+        <option value="feedback">Feedback on Services</option>
+        <option value="collaboration">Business Collaboration</option>
+        <option value="other">Other (please describe)</option>
+      </select>
 
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" required />
-        </div>
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required />
-        </div>
+      <p class="disclaimer">Please allow up to 72 hours for a response. Thank you for your patience!</p>
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
 
-        <div class="form-group">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">
-          <span class="btn-text">Send Message</span>
-          <span class="btn-loader hidden"></span>
-        </button>
-      </form>
-
-      <div id="form-success" class="form-success hidden">✅ Thank you! Your message has been sent.</div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="nfm-footer">
-    <div class="footer-container">
-      <!-- Logo & Social -->
-      <div class="footer-brand">
-        <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries Logo" class="footer-logo" />
-        <h2>New Faith Ministries</h2>
-        <div class="footer-socials">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-
-      <!-- Footer Navigation -->
-      <div class="footer-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="new-here.html" class="nav-link">NEW HERE?</a>
-        <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
-        <a href="give.html" class="nav-link">Give</a>
-        <a href="serve.html" class="nav-link">Serve</a>
-        <a href="contact-us.html" class="nav-link">Contact Us</a>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="footer-contact">
-        <p><i class="fas fa-map-marker-alt"></i> 2879 Brice Road, Brice, OH</p>
-        <p><i class="fas fa-clock"></i> Sunday 11AM ET</p>
-        <p><i class="fas fa-envelope"></i> ContactUs@newfaithministriesorg.faith</p>
-        <p><i class="fas fa-phone"></i> </p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; <span id="year"></span> New Faith Ministries. All rights reserved.</p>
-      <p class="footer-disclaimer">
-        Disclaimer: The content on this site is provided for spiritual enrichment and community engagement purposes only. It does not constitute legal or professional advice.
-      </p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Martinez Web Solutions. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.querySelector(".contact-form");
-      const successMessage = document.getElementById("form-success");
-      const submitBtn = form.querySelector(".submit-btn");
-      const btnText = form.querySelector(".btn-text");
-      const btnLoader = form.querySelector(".btn-loader");
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        const phone = form.phone.value.trim();
-        const message = form.message.value.trim();
-        form._replyto.value = email;
-
-        if (!name || !email || !phone || !message) {
-          alert("Please fill in all fields before submitting.");
-          return;
-        }
-
-        btnText.textContent = "Sending...";
-        btnLoader.classList.remove("hidden");
-        submitBtn.disabled = true;
-
-        try {
-          const formData = new FormData(form);
-          const response = await fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (response.ok) {
-            form.reset();
-            successMessage.classList.remove("hidden");
-            successMessage.classList.add("show");
-          } else {
-            alert("Oops! Something went wrong. Please try again.");
-          }
-        } catch (error) {
-          alert("Server error. Try again later.");
-        }
-
-        btnText.textContent = "Send Message";
-        btnLoader.classList.add("hidden");
-        submitBtn.disabled = false;
-      });
-    });
-  </script>
-
-  <script src="script.js" defer></script>
-
-  <!-- Back to Top -->
-  <a href="#" class="back-to-top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </a>
+  <!-- Optional: External JS script -->
+  <script defer src="script.js"></script>
 </body>
+
 </html>
