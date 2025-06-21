@@ -43,7 +43,7 @@
   </header>
 
   <main class="contact-container">
-    <form action="https://formspree.io/f/mwpbnzpe" method="POST" class="contact-form">
+    <form action="https://formspree.io/f/mwpbnzpe" method="POST" class="contact-form" id="contactForm">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required />
 
@@ -67,7 +67,10 @@
       <textarea id="message" name="message" rows="5" required></textarea>
 
       <p class="disclaimer">Please allow up to 72 hours for a response. Thank you for your patience!</p>
-      <button type="submit">Send Message</button>
+
+      <div id="formStatus" style="margin-top: 1rem; font-weight: bold;"></div>
+
+      <button type="submit" id="submitBtn">Send Message</button>
     </form>
   </main>
 
@@ -75,8 +78,46 @@
     <p>&copy; 2025 Martinez Web Solutions. All rights reserved.</p>
   </footer>
 
-  <!-- Optional: External JS script -->
-  <script defer src="script.js"></script>
+  <script>
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      statusDiv.style.color = '#00e6ff';
+      statusDiv.textContent = 'Submitting your message...';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          form.reset();
+          statusDiv.style.color = '#00ff99';
+          statusDiv.textContent = '✅ Message sent! I’ll be in touch soon.';
+        } else {
+          const data = await response.json();
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        statusDiv.style.color = '#ff6666';
+        statusDiv.textContent = `❌ ${error.message}`;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
 </body>
 
 </html>
