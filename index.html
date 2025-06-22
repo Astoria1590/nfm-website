@@ -94,39 +94,12 @@
 </section>
 <section>
 
-  <!-- Latest News Section -->
-  <section class="latest-news">
-    <h2>Latest News</h2>
-    <div class="news-list" id="news-list">
-      <!-- News items will be inserted by JavaScript -->
-    </div>
-  </section>
-
   <!-- Camp You Can Section -->
   <section class="camp-you-can">
     <h2>Camp You Can</h2>
     <p>Empowering youth through faith, fun, and fellowship. Join us this summer for unforgettable memories and growth in God.</p>
     <button onclick="alert('Redirecting to camp registration...')">Register Now</button>
   </section>
-
-  <script>
-    // Sample news data – replace with fetch from CMS or API later
-    const newsData = [
-      "VBS 2025 Registration Now Open!",
-      "Camp You Can Launches July 10th!",
-      "Church Expands Community Outreach Programs.",
-      "Youth Worship Night Recap: A Night to Remember."
-    ];
-
-    const newsList = document.getElementById('news-list');
-    newsData.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'news-item';
-      div.textContent = item;
-      newsList.appendChild(div);
-    });
-  </script>
-</section>
 
 
   <!-- Church For Section -->
