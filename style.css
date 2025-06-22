@@ -176,6 +176,9 @@ body {
   transform: translateY(-3px);
 }
 
+.register-btn {
+  text-decoration: none;
+}
 
 
 /* Church Section */
