@@ -914,7 +914,7 @@ body {
 /* Camp You Can */
 .camp-you-can {
   background: linear-gradient(135deg, #4facfe, #00f2fe);
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 80px 20px;
   text-align: center;
 }
@@ -935,7 +935,7 @@ body {
 }
 
 .camp-you-can button {
-  background: white;
+  background: rgb(0, 0, 0);
   color: #00bcd4;
   font-weight: bold;
   border: none;
