@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Kids Ministry | New Faith Ministries",
+    "url": "kids.html",
+    "description": "Welcome to Kids Ministry at New Faith Ministries — a fun, safe space where your children can grow in faith and friendship.",
+    "content": "Kids Ministry hero with Kids Street logo, plan your visit button, church logo, footer with social links and contact info."
+  },
+  {
+    "title": "New Here | New Faith Ministries",
+    "url": "new-here.html",
+    "description": "Welcome to New Faith Ministries! Learn about our service times, what to expect, and how to get connected.",
+    "content": "Hero with welcome message, service times, what to expect section, links to What We Believe and About Us pages, footer with contact info."
+  },
+  {
+    "title": "Serve | New Faith Ministries",
+    "url": "serve.html",
+    "description": "The best way to make Faircreek Church feel like your church by serving in various ministries.",
+    "content": "Serve hero section, serve areas listing, join a team invitation, footer with contact and social links."
+  },
+  {
+    "title": "What We Believe | New Faith Ministries",
+    "url": "what-we-believe.html",
+    "description": "Discover what New Faith Ministries believes about Jesus Christ, salvation, the Bible, and more.",
+    "content": "Statements of belief about Jesus, salvation, Bible, Trinity, heaven and hell, mission statement, footer."
+  },
+  {
+    "title": "New Here | New Faith Ministries (Accessibility Improved)",
+    "url": "new-here-accessible.html",
+    "description": "New Here page with enhanced accessibility features and clear navigation.",
+    "content": "Accessible nav with aria labels, hamburger toggle with keyboard support, hero, what to expect, learn more sections, footer."
+  },
+  {
+    "title": "Serve | New Faith Ministries (Volunteer Focus)",
+    "url": "serve-volunteers.html",
+    "description": "Serve page highlighting volunteer opportunities and inviting people to join teams.",
+    "content": "Serve hero, volunteer images, serve areas list, join a team section, footer."
+  },
+  {
+    "title": "Kids Ministry | New Faith Ministries (Alternate)",
+    "url": "kids-alt.html",
+    "description": "Kids Ministry welcoming children with hero, Kids Street logo, plan your visit button, footer.",
+    "content": "Kids ministry hero with overlay, logo, visit button, footer with socials and contact info."
+  },
+  {
+    "title": "Home | New Faith Ministries",
+    "url": "index.html",
+    "description": "Main homepage with welcome hero, quick links, service info, and contact details.",
+    "content": "Homepage hero, navigation, main sections about faith, service times, giving, serving, footer."
+  },
+  {
+    "title": "Contact Us | New Faith Ministries",
+    "url": "contact-us.html",
+    "description": "Contact page with form, address, phone, email, and social media links.",
+    "content": "Contact form, location info, email and phone contact, footer with navigation."
+  },
+  {
+    "title": "Give | New Faith Ministries",
+    "url": "give.html",
+    "description": "Giving page encouraging donations to support the ministry.",
+    "content": "Giving options, secure donation form, footer with contact info."
+  },
+  {
+    "title": "Serve | New Faith Ministries (Third Version)",
+    "url": "serve-3.html",
+    "description": "Another serve page version with images, volunteer roles, join team section and footer.",
+    "content": "Serve page inviting volunteers, showing areas to serve, join a team button, footer."
+  },
+  [
+  {
+    "title": "New Here | New Faith Ministries (Simplified)",
+    "url": "new-here-simple.html",
+    "description": "Simplified new here page with header, nav, hero, footer and back to top button.",
+    "content": "New Here page with nav, hero section, footer, accessibility improvements, back to top."
+  },
+  {
+    "title": "Give Now | New Faith Ministries",
+    "url": "give.html",
+    "description": "Support the vision of New Faith Ministries through weekly or monthly giving. Choose a donation tier or give any amount securely online.",
+    "content": "Give Now, donate, tithe, offering, Faith Starter $10 weekly, Supporter $25 weekly, Faith Partner $50 weekly, Kingdom Builder $100 weekly, Vision Sustainer $250 monthly, Custom Donation, recurring donation, one-time gift, secure giving, stripe donations, outreach support, spiritual giving."
+  }
+]
+]
