@@ -10,7 +10,7 @@
   <script async src="https://cse.google.com/cse.js?cx=42580b5a5ee3e43fd"></script>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=4.0">
+    <link rel="stylesheet" href="style.css?v=5.0">
   <link rel="stylesheet" href="serve.css" />
   <link rel="stylesheet" href="contact-us.css" />
   <link rel="stylesheet" href="give-now.css" />
@@ -19,40 +19,45 @@
   <link rel="stylesheet" href="kids.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 </head>
-
 <body>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="brand">
-      <a href="/" class="mobile-logo-link">
-        <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries logo" class="logo" />
-      </a>
-      <div class="brand-text">
-        <h1 class="pulse-title">New Faith Ministries</h1>
-        <p>Feeding God's People Spiritually and Physically</p>
-      </div>
+<header class="site-header">
+  <div class="brand">
+    <a href="/" class="mobile-logo-link">
+      <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries logo" class="logo" />
+    </a>
+    <div class="brand-text">
+      <h1 class="pulse-title">New Faith Ministries</h1>
+      <p>Feeding God's People Spiritually and Physically</p>
     </div>
-    <div class="hamburger" id="hamburger-btn">
-      <span></span><span></span><span></span>
-    </div>
-    <nav class="nfm-nav" id="nav-menu">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="new-here.html" class="nav-link">NEW HERE?</a>
-      <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
-      <a href="give.html" class="nav-link">Give</a>
-      <a href="serve.html" class="nav-link">Serve</a>
-      <a href="contact-us.html" class="nav-link">Contact Us</a>
-      <a class="nav-link church-center" href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/me">Church Center</a>
-      <div class="search-form-container">
-        <i class="fas fa-search search-icon" id="search-toggle"></i>
-        <form id="search-form" action="search.html" method="GET">
-          <input type="text" name="q" id="search-input" placeholder="Search New Faith Ministries" />
-        </form>
-      </div>
-    </nav>
-  </header>
+  </div>
+  <div class="hamburger" id="hamburger-btn" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+<nav class="nfm-nav" id="nav-menu" role="navigation" aria-label="Primary navigation">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="new-here.html" class="nav-link">NEW HERE?</a>
+  <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
+  <a href="give.html" class="nav-link">Give</a>
+  <a href="serve.html" class="nav-link">Serve</a>
+  <a href="contact-us.html" class="nav-link">Contact Us</a>
+  <a class="nav-link church-center" href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/me">Church Center</a>
+
+  <!-- Search Icon in Nav -->
+  <a href="#" class="nav-link" id="search-toggle" aria-label="Search" role="button" tabindex="0">
+    <i class="fas fa-search"></i>
+  </a>
+</nav>
+
+<!-- Search Bar container below nav -->
+<div class="search-bar-container" id="search-bar-container">
+  <input type="text" id="searchInput" placeholder="Search New Faith Ministries..." autocomplete="off" />
+  <ul id="searchResults"></ul>
+</div>
+</header>
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -94,13 +99,39 @@
 </section>
 <section>
 
-<!-- Camp You Can Section -->
-<section class="camp-you-can">
-  <h2>Camp U Can</h2>
-  <p>Empowering youth through faith, fun, and fellowship. Join us this summer for unforgettable memories and growth in God.</p>
-  <a href="https://scbo.regfox.com/campucan-2025" target="_blank" class="register-btn">Register Now</a>
-</section>
+  <!-- Latest News Section -->
+  <section class="latest-news">
+    <h2>Latest News</h2>
+    <div class="news-list" id="news-list">
+      <!-- News items will be inserted by JavaScript -->
+    </div>
+  </section>
 
+  <!-- Camp You Can Section -->
+  <section class="camp-you-can">
+    <h2>Camp You Can</h2>
+    <p>Empowering youth through faith, fun, and fellowship. Join us this summer for unforgettable memories and growth in God.</p>
+    <button onclick="alert('Redirecting to camp registration...')">Register Now</button>
+  </section>
+
+  <script>
+    // Sample news data – replace with fetch from CMS or API later
+    const newsData = [
+      "VBS 2025 Registration Now Open!",
+      "Camp You Can Launches July 10th!",
+      "Church Expands Community Outreach Programs.",
+      "Youth Worship Night Recap: A Night to Remember."
+    ];
+
+    const newsList = document.getElementById('news-list');
+    newsData.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'news-item';
+      div.textContent = item;
+      newsList.appendChild(div);
+    });
+  </script>
+</section>
 
 
   <!-- Church For Section -->
@@ -221,7 +252,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+ <!-- Footer -->
   <footer class="nfm-footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -256,35 +287,128 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+ <!-- Scripts -->
+<script>
+const searchToggle = document.getElementById('search-toggle');
+const searchBarContainer = document.querySelector('.search-bar-container');
 
-    const toggle = document.getElementById('search-toggle');
-    const container = document.querySelector('.search-form-container');
-    const input = document.getElementById('search-input');
+searchToggle.addEventListener('click', () => {
+  searchBarContainer.classList.toggle('active');
+});
+document.addEventListener('click', (e) => {
+  if (!searchBarContainer.contains(e.target) && !searchToggle.contains(e.target)) {
+    searchBarContainer.classList.remove('active');
+  }
+});
+</script>
 
-    toggle.addEventListener('click', () => {
-      container.classList.toggle('active');
-      if (container.classList.contains('active')) {
-        input.focus();
-      } else {
-        input.value = '';
-      }
+<script src="script.js" defer></script>
+
+<!-- Back to Top -->
+<a href="#" class="back-to-top" aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- Custom Fuse.js Search Logic -->
+<script>
+  let fuse;
+  let searchData = [];
+
+  fetch('/search.json')
+    .then(res => res.json())
+    .then(data => {
+      searchData = data;
+      fuse = new Fuse(searchData, {
+        keys: ['title', 'content'],
+        threshold: 0.3
+      });
     });
 
-    document.addEventListener('click', (e) => {
-      if (!container.contains(e.target)) {
-        container.classList.remove('active');
-        input.value = '';
-      }
-    });
-  </script>
-  <script src="script.js" defer></script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const query = this.value.trim();
+    const resultsList = document.getElementById('searchResults');
+    resultsList.innerHTML = '';
 
-  <!-- Back to Top -->
-  <a href="#" class="back-to-top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </a>
+    if (!query || !fuse) return;
+
+    const results = fuse.search(query);
+
+    results.forEach(result => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${result.item.url}">${result.item.title}</a>`;
+      resultsList.appendChild(li);
+    });
+  });
+</script>
+
+<style>
+  .custom-search {
+    position: relative;
+  }
+  #searchInput {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  #searchResults {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 999;
+    margin-top: 5px;
+    padding-left: 0;
+  }
+  #searchResults li {
+    list-style: none;
+    padding: 8px;
+  }
+  #searchResults li a {
+    text-decoration: none;
+    color: #333;
+  }
+  #searchResults li a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+  <style>
+    .custom-search {
+      position: relative;
+    }
+    #searchInput {
+      padding: 8px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #searchResults {
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 250px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 999;
+      margin-top: 5px;
+      padding-left: 0;
+    }
+    #searchResults li {
+      list-style: none;
+      padding: 8px;
+    }
+    #searchResults li a {
+      text-decoration: none;
+      color: #333;
+    }
+    #searchResults li a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </body>
 </html>
