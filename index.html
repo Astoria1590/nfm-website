@@ -10,19 +10,73 @@
   <script async src="https://cse.google.com/cse.js?cx=42580b5a5ee3e43fd"></script>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=5.0">
+    <link rel="stylesheet" href="style.css?v=5.0">
   <link rel="stylesheet" href="serve.css" />
   <link rel="stylesheet" href="contact-us.css" />
   <link rel="stylesheet" href="give-now.css" />
   <link rel="stylesheet" href="give.css" />
   <link rel="stylesheet" href="new-here.css">
   <link rel="stylesheet" href="kids.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 </head>
 <body>
 
-<!-- Announcement Slideshow -->
+  <!-- Header -->
+<header class="site-header">
+  <div class="brand">
+    <a href="/" class="mobile-logo-link">
+      <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries logo" class="logo" />
+    </a>
+    <div class="brand-text">
+      <h1 class="pulse-title">New Faith Ministries</h1>
+      <p>Feeding God's People Spiritually and Physically</p>
+    </div>
+  </div>
+  <div class="hamburger" id="hamburger-btn" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+<nav class="nfm-nav" id="nav-menu" role="navigation" aria-label="Primary navigation">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="new-here.html" class="nav-link">NEW HERE?</a>
+  <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
+  <a href="give.html" class="nav-link">Give</a>
+  <a href="serve.html" class="nav-link">Serve</a>
+  <a href="contact-us.html" class="nav-link">Contact Us</a>
+  <a class="nav-link church-center" href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/me">Church Center</a>
+
+  <!-- Search Icon in Nav -->
+  <a href="#" class="nav-link" id="search-toggle" aria-label="Search" role="button" tabindex="0">
+    <i class="fas fa-search"></i>
+  </a>
+</nav>
+
+<!-- Search Bar container below nav -->
+<div class="search-bar-container" id="search-bar-container">
+  <input type="text" id="searchInput" placeholder="Search New Faith Ministries..." autocomplete="off" />
+  <ul id="searchResults"></ul>
+</div>
+</header>
+
+  <!-- Hero Section -->
+<section class="hero-section">
+  <!-- Mobile-only video -->
+  <video autoplay muted loop playsinline class="hero-video desktop-only">
+    <source src="https://res.cloudinary.com/dbeifkzba/video/upload/v1750118915/IMG_1430_hbqfxu.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero-overlay">
+    <h1>NFM IS FOR YOU</h1>
+    <p><u>SERVICE TIMES | 11:00 AM</u></p>
+    <div class="hero-buttons">
+      <a href="https://newfaithministries.churchcenter.com/groups/unique?enrollment=open_signup%2Crequest_to_join&filter=enrollment" class="hero-btn">PLAN YOUR VISIT</a>
+      <a href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/groups/unique?enrollment=open_signup%2Crequest_to_join&filter=enrollment" class="hero-btn">CONNECT WITH US</a>
+    </div>
+  </div>
+</section>
+
 <section class="announcement-section">
   <div class="announcement-wrapper">
     <div class="announcement-slideshow">
@@ -45,108 +99,296 @@
     </div>
   </div>
 </section>
+<section>
 
-<!-- Scripts -->
+  <!-- Camp You Can Section -->
+  <section class="camp-you-can">
+    <h2>Camp U Can</h2>
+    <p>Empowering youth through faith, fun, and fellowship. Join us this summer for unforgettable memories and growth in God. Starting <b>Aug 4th - 7th</b></p>
+    <section>
+  <a href="https://scbo.regfox.com/campucan-2025" onclick="alert('Redirecting to camp registration...')" target="_blank" class="register-link">
+    <button type="button">Register Now</button>
+  </a>
+</section>
+</section>
+
+
+  <!-- Church For Section -->
+  <section class="church-for-section">
+    <h2><span class="orange-text">New Faith Ministries</span></h2>
+    <h3>A CHURCH <span class="bold-text">FOR</span> <span class="orange-text">BRICE</span></h3>
+    <h3>A CHURCH <span class="bold-text">FOR</span> REYNOLDS<span class="orange-text">BURG</span></h3>
+    <p>and the surrounding Columbus Ohio Area</p>
+  </section>
+
+  <!-- Info Cards Section -->
+  <section class="info-section">
+    <!-- New Here -->
+    <div class="info-card">
+      <img src="https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/img_1408.jpeg" alt="New Here?" />
+      <div class="info-text">
+        <h2>NEW HERE?</h2>
+        <p>If you’re looking for a church home in the Brice, Reynoldsburg, and Columbus area, you’ll love New Faith Ministries.</p>
+        <a href="new-here.html" class="info-button">LEARN MORE</a>
+      </div>
+    </div>
+
+    <!-- Kids -->
+    <div class="info-card reverse">
+      <img src="https://www.shutterstock.com/image-photo/group-little-kids-playing-games-600nw-2346374939.jpg" alt="Kids Street" />
+      <div class="info-text">
+        <h2>KIDS STREET</h2>
+        <p>We are here to help you raise great kids. Kids Street is an environment designed with your child in mind.</p>
+        <a href="kids.html" class="info-button">LEARN MORE</a>
+      </div>
+    </div>
+
+    <!-- Students -->
+    <div class="info-card">
+      <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_600,h_400/https://ithehouse.org/wp-content/uploads/2021/09/House-Youth_Wednesday.jpg" alt="Students" />
+      <div class="info-text">
+        <h2>STUDENTS</h2>
+        <p>Tribe (middle school) and InsideOut (high school) – we want to inspire your student to love God, live differently, and lead the way.</p>
+        <a href="#" class="info-button">LEARN MORE</a>
+      </div>
+    </div>
+
+    <!-- Groups -->
+    <div class="info-card reverse">
+      <img src="https://cdn.sanity.io/images/qiodnnh0/production/8ca3da7e4b0e96e8dc7b3fc99ef58e586b07216a-1200x600.jpg?fit=max&auto=format" alt="Join a Group" />
+      <div class="info-text">
+        <h2>JOIN A GROUP</h2>
+        <p>Life is better connected. No matter what season of life you're in, there's a group for you here.</p>
+        <a href="https://newfaithministries.churchcenter.com/groups/unique?enrollment=open_signup%2Crequest_to_join&filter=enrollment" class="info-button">LEARN MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero for You Section -->
+  <section class="hero-for-section">
+    <div class="hero-for-bg">
+      <div class="hero-for-overlay">
+        <h1>HERE <span class="highlight-orange">FOR</span> YOU!</h1>
+        <div class="hero-for-buttons">
+          <a href="https://newfaithministries.churchcenter.com/groups/unique?enrollment=open_signup%2Crequest_to_join&filter=enrollment" class="hero-btn">PLAN YOUR VISIT</a>
+          <a href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/groups/unique?enrollment=open_signup%2Crequest_to_join&filter=enrollment" class="hero-btn">CONNECT WITH US</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sunday Experience -->
+  <section class="sunday-experience-section">
+    <div class="sunday-experience-container">
+      <div class="sunday-experience-image">
+        <img src="https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/jerome.jpeg" alt="Sunday Service">
+      </div>
+      <div class="sunday-experience-text">
+        <h2 class="section-title">SUNDAY EXPERIENCE</h2>
+        <h3 class="section-subtitle">Sundays Together at NFM</h3>
+        <p>Want to check out what a service looks like on Sunday? Watch past messages filled with inspiring sermons and powerful worship that will encourage your faith walk. Invite a friend and join in!</p>
+        <a href="#" class="watch-btn">WATCH A MESSAGE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>FAQ</h2>
+    <p>Have questions? We have the answers!</p>
+    <div class="faq-grid">
+      <div class="faq-entry"><div class="faq-item"><span>Where are you located</span><span class="faq-toggle">+</span></div><div class="faq-answer">We are located at 2879 Brice Road, Columbus, Ohio.</div></div>
+      <div class="faq-entry"><div class="faq-item"><span>What time are services</span><span class="faq-toggle">+</span></div><div class="faq-answer">Our Sunday services start at 11:00 AM.</div></div>
+      <div class="faq-entry"><div class="faq-item"><span>Is there something for my kids</span><span class="faq-toggle">+</span></div><div class="faq-answer">Yes! We have a children's ministry with activities and care.</div></div>
+      <div class="faq-entry"><div class="faq-item"><span>What does a service look like</span><span class="faq-toggle">+</span></div><div class="faq-answer">Our services include live worship, prayer, and a message.</div></div>
+    </div>
+  </section>
+
+  <!-- Welcome Hero -->
+  <section class="welcome-hero-section">
+    <div class="welcome-hero-overlay">
+      <h2>Looking for a church but don't know where to turn?<br>We want to help you find a home.</h2>
+      <h1>WE LOOK FORWARD TO MEETING YOU</h1>
+      <div class="welcome-hero-buttons">
+        <a href="https://newfaithministries.churchcenter.com/groups/unique?enrollment=open_signup%2Crequest_to_join&filter=enrollment" class="welcome-btn">PLAN YOUR VISIT</a>
+        <a href="new-here.html" class="welcome-btn">NEW HERE?</a>
+        <a href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/groups/unique?enrollment=open_signup%2Crequest_to_join&filter=enrollment" class="welcome-btn">CONNECT WITH US</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Map -->
+  <section class="church-location-section">
+    <div class="church-location-container">
+      <div class="church-location-text">
+        <h2><span class="bold">A Church <span class="highlight-orange">FOR</span> Brice</span></h2>
+        <h2><span class="bold">A Church <span class="highlight-orange">FOR</span> Reynoldsburg</span></h2>
+        <h2><span class="bold">A Church <span class="highlight-orange">FOR</span> the Columbus Area</span></h2>
+      </div>
+      <div class="church-location-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.949331314513!2d-82.83475382512218!3d39.92015008571508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88387cb273b0bc47%3A0x880dc48cea2d83c!2sNew%20Faith%20Ministries!5e0!3m2!1sen!2sus!4v1750704588790!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <footer class="nfm-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="https://i.etsystatic.com/18338096/r/il/b0e891/6024795251/il_1080xN.6024795251_hi68.jpg" alt="New Faith Ministries Logo" class="footer-logo" />
+        <h2>New Faith Ministries</h2>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="new-here.html" class="nav-link">NEW HERE?</a>
+        <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=live_videos" class="nav-link">Watch Live</a>
+        <a href="give.html" class="nav-link">Give</a>
+        <a href="serve.html" class="nav-link">Serve</a>
+        <a href="contact-us.html" class="nav-link">Contact Us</a>
+      </div>
+
+      <div class="footer-contact">
+        <p><i class="fas fa-map-marker-alt"></i> 2879 Brice Road, Brice</p>
+        <p><i class="fas fa-clock"></i> Sunday 11AM ET</p>
+        <p><i class="fas fa-envelope"></i> ContactUs@newfaithministriesorg.faith</p>
+        <p><i class="fas fa-phone"></i> <!-- You can add your number here --></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> New Faith Ministries. All rights reserved.</p>
+      <p class="footer-disclaimer">Disclaimer: The content on this site is provided for spiritual enrichment and community engagement purposes only. It does not constitute legal or professional advice.</p>
+    </div>
+  </footer>
+
+ <!-- Scripts -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  let slideIndex = 0;
-  const slides = document.querySelectorAll(".announcement-slideshow .slide");
-  const prevBtn = document.querySelector(".announcement-slideshow .prev");
-  const nextBtn = document.querySelector(".announcement-slideshow .next");
-  let autoplayInterval;
+const searchToggle = document.getElementById('search-toggle');
+const searchBarContainer = document.querySelector('.search-bar-container');
 
-  if (!slides.length) {
-    console.error("❌ No slides found");
-    return;
+searchToggle.addEventListener('click', () => {
+  searchBarContainer.classList.toggle('active');
+});
+document.addEventListener('click', (e) => {
+  if (!searchBarContainer.contains(e.target) && !searchToggle.contains(e.target)) {
+    searchBarContainer.classList.remove('active');
   }
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
-    });
-  }
-
-  function nextSlide() {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-  }
-
-  function prevSlide() {
-    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-    showSlide(slideIndex);
-  }
-
-  nextBtn?.addEventListener("click", () => {
-    stopAutoplay();
-    nextSlide();
-    startAutoplay();
-  });
-
-  prevBtn?.addEventListener("click", () => {
-    stopAutoplay();
-    prevSlide();
-    startAutoplay();
-  });
-
-  function startAutoplay() {
-    autoplayInterval = setInterval(nextSlide, 5000);
-  }
-
-  function stopAutoplay() {
-    clearInterval(autoplayInterval);
-  }
-
-  showSlide(slideIndex);
-  startAutoplay();
 });
 </script>
 
+<script src="script.js" defer></script>
+
+<!-- Back to Top -->
+<a href="#" class="back-to-top" aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- Custom Fuse.js Search Logic -->
+<script>
+  let fuse;
+  let searchData = [];
+
+  fetch('/search.json')
+    .then(res => res.json())
+    .then(data => {
+      searchData = data;
+      fuse = new Fuse(searchData, {
+        keys: ['title', 'content'],
+        threshold: 0.3
+      });
+    });
+
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const query = this.value.trim();
+    const resultsList = document.getElementById('searchResults');
+    resultsList.innerHTML = '';
+
+    if (!query || !fuse) return;
+
+    const results = fuse.search(query);
+
+    results.forEach(result => {
+      const li = document.createElement('li');
+      li.innerHTML = <a href="${result.item.url}">${result.item.title}</a>;
+      resultsList.appendChild(li);
+    });
+  });
+</script>
+
 <style>
-.announcement-section {
-  margin-top: 50px;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-.announcement-wrapper {
-  max-width: 100%;
-  position: relative;
-}
-.announcement-slideshow {
-  position: relative;
-}
-.announcement-slideshow .slide {
-  display: none;
-  width: 100%;
-}
-.announcement-slideshow .slide.active {
-  display: block;
-}
-.announcement-slideshow img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.announcement-slideshow .prev,
-.announcement-slideshow .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: #fff;
-  background-color: rgba(0,0,0,0.5);
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-}
-.announcement-slideshow .prev {
-  left: 10px;
-}
-.announcement-slideshow .next {
-  right: 10px;
-}
+  .custom-search {
+    position: relative;
+  }
+  #searchInput {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  #searchResults {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 999;
+    margin-top: 5px;
+    padding-left: 0;
+  }
+  #searchResults li {
+    list-style: none;
+    padding: 8px;
+  }
+  #searchResults li a {
+    text-decoration: none;
+    color: #333;
+  }
+  #searchResults li a:hover {
+    text-decoration: underline;
+  }
 </style>
 
+  <style>
+    .custom-search {
+      position: relative;
+    }
+    #searchInput {
+      padding: 8px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #searchResults {
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 250px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 999;
+      margin-top: 5px;
+      padding-left: 0;
+    }
+    #searchResults li {
+      list-style: none;
+      padding: 8px;
+    }
+    #searchResults li a {
+      text-decoration: none;
+      color: #333;
+    }
+    #searchResults li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="script.js"></script>
 </body>
 </html>
