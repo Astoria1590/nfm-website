@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: background 0.3s ease, box-shadow 0.3s ease;
@@ -47,7 +47,7 @@
   display: flex;
   gap: 25px;
   align-items: center;
-  position: relative; /* make sure relative for absolute children */
+  position: relative;
 }
 .nav-link {
   color: rgb(179, 39, 39);
@@ -72,8 +72,8 @@
 /* Search bar container below nav */
 .search-bar-container {
   position: absolute;
-  top: 100%; /* directly below nav */
-  right: 1.5rem; /* aligns with nav padding */
+  top: 100%;
+  right: 1.5rem;
   background-color: #f8f8f8;
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -95,7 +95,6 @@
   overflow: visible;
 }
 
-/* Search input styling */
 .search-bar-container input {
   width: 100%;
   padding: 8px 12px;
@@ -105,7 +104,6 @@
   box-sizing: border-box;
 }
 
-/* Search results styling */
 #searchResults {
   margin-top: 8px;
   list-style: none;
@@ -113,16 +111,13 @@
   max-height: 150px;
   overflow-y: auto;
 }
-
 #searchResults li {
   padding: 6px;
 }
-
 #searchResults li a {
   text-decoration: none;
   color: #333;
 }
-
 #searchResults li a:hover {
   text-decoration: underline;
 }
@@ -141,8 +136,20 @@
   border-radius: 2px;
 }
 
-/* Mobile Nav */
+/* Desktop only: show video */
+.hero-video.desktop-only {
+  display: block;
+}
+
+/* Hide video and use still image on mobile */
 @media (max-width: 768px) {
+  body {
+    background-image: url('https://img.freepik.com/free-photo/beautiful-scenery-sunset-peaceful-sea_181624-17792.jpg?semt=ais_hybrid&w=740') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   .nfm-nav {
     display: none;
     flex-direction: column;
@@ -153,20 +160,33 @@
     padding: 20px;
     border-radius: 8px;
   }
+
   .nfm-nav.active {
     display: flex;
   }
+
   .hamburger {
     display: flex;
   }
+
+  /* Hide the desktop video background on mobile */
+  .hero-video.desktop-only {
+    display: none !important;
+  }
 }
 
+/* Hero Section */
 .hero-section {
   position: relative;
   height: 100vh;
   overflow: hidden;
-}
+  background-color: black; /* fallback */
+    background-image: url('https://img.freepik.com/free-photo/beautiful-scenery-sunset-peaceful-sea_181624-17792.jpg?semt=ais_hybrid&w=740') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;}
 
+/* Video Background */
 .hero-video {
   position: absolute;
   top: 0;
@@ -177,6 +197,7 @@
   z-index: 1;
 }
 
+/* Overlay Content */
 .hero-overlay {
   position: relative;
   z-index: 2;
@@ -228,6 +249,32 @@
   transform: translateY(-3px);
 }
 
+/* Mobile-only styles */
+@media (max-width: 768px) {
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-video.mobile-only {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .hero-overlay {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+}
 
 
 /* Church Section */
