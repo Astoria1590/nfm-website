@@ -50,7 +50,7 @@
   position: relative; /* make sure relative for absolute children */
 }
 .nav-link {
-  color: rgb(0, 0, 0);
+  color: rgb(179, 39, 39);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
