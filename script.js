@@ -51,5 +51,53 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+  document.addEventListener("DOMContentLoaded", function () {
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".announcement-slideshow .slide");
+    const prevBtn = document.querySelector(".announcement-slideshow .prev");
+    const nextBtn = document.querySelector(".announcement-slideshow .next");
+    let autoplayInterval;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    function prevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, 7000);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener("click", () => {
+      stopAutoplay();
+      nextSlide();
+      startAutoplay();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      stopAutoplay();
+      prevSlide();
+      startAutoplay();
+    });
+
+    // Initialize
+    showSlide(slideIndex);
+    startAutoplay();
+  });
+
 
 
