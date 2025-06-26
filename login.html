@@ -443,7 +443,10 @@
         </div>
     </div>
 
-    <script>
+    <!-- your full <head> and <body> up to the <script> block remain the same -->
+<!-- (no need to paste again here since you posted it all and only the script needs update) -->
+
+<script>
 const loginForm = document.getElementById('loginForm');
 const loginBtn = document.getElementById('loginBtn');
 const loadingScreen = document.getElementById('loadingScreen');
@@ -457,16 +460,16 @@ loginForm.addEventListener('submit', function (e) {
     const email = document.getElementById('loginEmail').value.trim();
     const password = document.getElementById('loginPassword').value.trim();
 
-    // Clear any previous alerts
+    // Clear previous alert
     loginAlert.className = "alert";
     loginAlert.textContent = "";
 
-    // Show loading state
+    // Show loading button state
     loginBtn.classList.add('btn-loading');
     loginBtn.disabled = true;
     loginBtn.textContent = 'Signing In...';
 
-    // Submit to server
+    // Send POST to /login (corrected!)
     fetch('/login', {
         method: 'POST',
         headers: {
@@ -475,41 +478,26 @@ loginForm.addEventListener('submit', function (e) {
         body: JSON.stringify({ email, password })
     })
     .then(async response => {
-        console.log('Response status:', response.status);
-        console.log('Response ok:', response.ok);
-        
         if (response.ok) {
             const data = await response.json();
-            console.log('Success response:', data);
             loginAlert.className = "alert alert-success show";
             loginAlert.textContent = "Login successful! Redirecting...";
-            showLoadingScreen();
+            showLoadingScreen(); // ✅ show loader then redirect
         } else {
-            // Handle error responses
             let errorMessage = 'Login failed';
             try {
                 const errorData = await response.json();
-                console.log('Error response (JSON):', errorData);
-                errorMessage = errorData.error || 'Login failed';
-            } catch (jsonError) {
-                // If JSON parsing fails, try getting text
-                try {
-                    const text = await response.text();
-                    console.log('Error response (text):', text);
-                    errorMessage = text || 'Login failed';
-                } catch (textError) {
-                    console.log('Could not parse error response');
-                }
+                errorMessage = errorData.error || errorMessage;
+            } catch {
+                const text = await response.text();
+                errorMessage = text || errorMessage;
             }
             throw new Error(errorMessage);
         }
     })
     .catch(error => {
-        console.error('Login error:', error);
         loginAlert.className = "alert alert-error show";
         loginAlert.textContent = error.message || "Login failed. Please try again.";
-        
-        // Reset button state
         loginBtn.classList.remove('btn-loading');
         loginBtn.disabled = false;
         loginBtn.textContent = 'Sign In';
@@ -527,11 +515,11 @@ function showLoadingScreen() {
 
         if (width >= 100) {
             clearInterval(progress);
-            // Redirect to dashboard
             window.location.href = "/dashboard";
         }
-    }, 250);
+    }, 200);
 }
-    </script>
+</script>
+
 </body>
 </html>
