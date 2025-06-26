@@ -478,30 +478,36 @@ loginForm.addEventListener('submit', function (e) {
         body: JSON.stringify({ email, password })
     })
     .then(async response => {
-        if (response.ok) {
-            const data = await response.json();
-            loginAlert.className = "alert alert-success show";
-            loginAlert.textContent = "Login successful! Redirecting...";
-            showLoadingScreen(); // ✅ show loader then redirect
-        } else {
-            let errorMessage = 'Login failed';
-            try {
-                const errorData = await response.json();
-                errorMessage = errorData.error || errorMessage;
-            } catch {
-                const text = await response.text();
-                errorMessage = text || errorMessage;
-            }
-            throw new Error(errorMessage);
-        }
-    })
-    .catch(error => {
-        loginAlert.className = "alert alert-error show";
-        loginAlert.textContent = error.message || "Login failed. Please try again.";
-        loginBtn.classList.remove('btn-loading');
-        loginBtn.disabled = false;
-        loginBtn.textContent = 'Sign In';
-    });
+    const contentType = response.headers.get("content-type");
+    let responseBody;
+
+    if (contentType && contentType.includes("application/json")) {
+        responseBody = await response.json(); // Read body once as JSON
+    } else {
+        responseBody = await response.text(); // Or once as text
+    }
+
+    if (response.ok) {
+        console.log('Success response:', responseBody);
+        loginAlert.className = "alert alert-success show";
+        loginAlert.textContent = "Login successful! Redirecting...";
+        showLoadingScreen();
+    } else {
+        const errorMessage = responseBody?.error || responseBody || 'Login failed';
+        throw new Error(errorMessage);
+    }
+})
+.catch(error => {
+    console.error('Login error:', error);
+    loginAlert.className = "alert alert-error show";
+    loginAlert.textContent = error.message || "Login failed. Please try again.";
+
+    // Reset button state
+    loginBtn.classList.remove('btn-loading');
+    loginBtn.disabled = false;
+    loginBtn.textContent = 'Sign In';
+});
+
 });
 
 function showLoadingScreen() {
