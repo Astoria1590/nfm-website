@@ -6,9 +6,9 @@ const teamData = [
     desc: "Eric M develops and manages our church website and online presence, ensuring a seamless digital experience."
   },
   {
-    name: "Kelly",
+    name: "Kellie",
     title: "Social Media Manager",
-    img: "https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/kelly.jpg",
+    img: "https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/07/4338926959412775843.jpeg",
     desc: "Kelly shares our ministry with the world through engaging social media and uplifting content."
   },
   {
@@ -31,9 +31,9 @@ const teamData = [
   },
   {
     name: "Avon",
-    title: "Upcoming Ordained Minister",
+    title: "Ordained Minister",
     img: "https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/avon.png",
-    desc: "Avon is preparing for ordination, actively serving with a strong heart for ministry and leadership."
+    desc: "Avon through the grace of God has officially become an Ordained Minisiter, actively serving with a strong heart for ministry and leadership."
   },
   {
     name: "Michael",

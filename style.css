@@ -144,7 +144,7 @@
 /* Hide video and use still image on mobile */
 @media (max-width: 768px) {
   body {
-    background-image: url('https://img.freepik.com/free-photo/beautiful-scenery-sunset-peaceful-sea_181624-17792.jpg?semt=ais_hybrid&w=740') !important;
+    background-color: #555 !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -181,7 +181,7 @@
   height: 100vh;
   overflow: hidden;
   background-color: black; /* fallback */
-    background-image: url('https://img.freepik.com/free-photo/beautiful-scenery-sunset-peaceful-sea_181624-17792.jpg?semt=ais_hybrid&w=740') !important;
+    background-color: #555 !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
@@ -423,7 +423,6 @@ html, body {
 
 /* Fixed background image */
 .hero-for-bg {
-  background: url('https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/outside.jpeg') center center / cover no-repeat fixed;
   position: relative;
   padding: 180px 20px 120px;
   text-align: center;
@@ -949,71 +948,69 @@ body {
   color: #333;
 }
 
-/* Latest News */
-.latest-news {
-  background: linear-gradient(to right, #ffecd2, #fcb69f);
+.camp-you-can-enhanced {
+  background: url('https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/outside.jpeg') center center / cover no-repeat;
+  position: relative;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.camp-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 60px 20px;
-  text-align: center;
-}
-
-.latest-news h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #222;
-}
-
-.news-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-.news-item {
-  background: white;
-  border-radius: 12px;
-  padding: 20px 30px;
-  width: 90%;
-  max-width: 700px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-left: 6px solid #ff6f61;
-  font-size: 1.1rem;
-}
-
-/* Camp You Can */
-.camp-you-can {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  color: rgb(0, 0, 0);
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.camp-you-can .camp-content {
-  max-width: 800px;
+  border-radius: 20px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.camp-you-can h2 {
-  font-size: 3rem;
+.camp-content h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-.camp-you-can p {
-  font-size: 1.25rem;
+.camp-content p {
+  font-size: 1.3rem;
+  color: #eee;
   margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-.camp-you-can button {
-  background: rgb(0, 0, 0);
-  color: #00bcd4;
-  font-weight: bold;
-  border: none;
-  padding: 15px 35px;
+.camp-btn {
+  background-color: #f7931e;
+  color: white;
+  padding: 14px 32px;
   font-size: 1.1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+}
+
+.camp-btn:hover {
+  background-color: #e67e0b;
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .camp-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .camp-content p {
+    font-size: 1rem;
+  }
+
+  .camp-btn {
+    font-size: 1rem;
+    padding: 12px 26px;
+  }
 }
 
 .camp-you-can button:hover {

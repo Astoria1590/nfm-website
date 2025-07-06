@@ -45,7 +45,6 @@
   <a href="serve.html" class="nav-link">Serve</a>
   <a href="contact-us.html" class="nav-link">Contact Us</a>
   <a class="nav-link church-center" href="https://newfaithministries.churchcenter.com/login?return=https://newfaithministries.churchcenter.com/me">Church Center</a>
-  <a href="https://nfm-website.onrender.com/login" class="nav-link">NFM Login</a>
   <!-- Search Icon in Nav -->
   <a href="#" class="nav-link" id="search-toggle" aria-label="Search" role="button" tabindex="0">
     <i class="fas fa-search"></i>
@@ -99,44 +98,16 @@
     </div>
   </div>
 </section>
-<section>
 
-  <!-- Latest News Section -->
-  <section class="latest-news">
-    <h2>Latest News</h2>
-    <div class="news-list" id="news-list">
-      <!-- News items will be inserted by JavaScript -->
+<!-- Camp You Can Section -->
+<section class="camp-you-can-enhanced">
+  <div class="camp-overlay">
+    <div class="camp-content">
+      <h2>Camp You Can</h2>
+      <p>Empowering youth through <strong>faith</strong>, <strong>fun</strong>, and <strong>fellowship</strong>. Join us this summer for unforgettable memories and growth in God.</p>
+      <a href="https://scbo.regfox.com/campucan-2025" target="_blank" class="camp-btn" onclick="alert('Redirecting to camp registration...')">Register Now</a>
     </div>
-  </section>
-
-  <!-- Camp You Can Section -->
-  <section class="camp-you-can">
-    <h2>Camp You Can</h2>
-    <p>Empowering youth through faith, fun, and fellowship. Join us this summer for unforgettable memories and growth in God.</p>
-    <section>
-  <a href="https://scbo.regfox.com/campucan-2025" onclick="alert('Redirecting to camp registration...')" target="_blank" class="register-link">
-    <button type="button">Register Now</button>
-  </a>
-</section>
-
-
-  <script>
-    // Sample news data – replace with fetch from CMS or API later
-    const newsData = [
-      "VBS 2025 Registration Now Open!",
-      "Camp You Can Launches July 10th!",
-      "Church Expands Community Outreach Programs.",
-      "Youth Worship Night Recap: A Night to Remember."
-    ];
-
-    const newsList = document.getElementById('news-list');
-    newsData.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'news-item';
-      div.textContent = item;
-      newsList.appendChild(div);
-    });
-  </script>
+  </div>
 </section>
 
 
@@ -252,10 +223,6 @@
         <h2><span class="bold">A Church <span class="highlight-orange">FOR</span> Reynoldsburg</span></h2>
         <h2><span class="bold">A Church <span class="highlight-orange">FOR</span> the Columbus Area</span></h2>
       </div>
-      <div class="church-location-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7277.809327596295!2d-82.83434377076976!3d39.92031667015342" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
   </section>
 
  <!-- Footer -->
