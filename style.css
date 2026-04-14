@@ -281,19 +281,37 @@
 }
 
 
-/* MOBILE FIX (VERY IMPORTANT) */
+/* NEW FLEX WRAPPER */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+/* GoFundMe */
+.gofundme-wrapper {
+  max-width: 300px;
+  width: 100%;
+}
+
+.gofundme-wrapper .gfm-embed {
+  transform: scale(0.85);
+  transform-origin: top left;
+}
+
+/* OPTIONAL: shift content slightly left without breaking */
+.hero-overlay {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* MOBILE FIX */
 @media (max-width: 768px) {
-  .hero-container {
+  .hero-flex {
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .gofundme-wrapper {
-    max-width: 100%;
-  }
-
-  .gofundme-wrapper .gfm-embed {
-    transform: scale(1);
+    align-items: center;
   }
 
   .hero-overlay {
@@ -301,8 +319,8 @@
     text-align: center;
   }
 
-  .hero-buttons {
-    justify-content: center;
+  .gofundme-wrapper .gfm-embed {
+    transform: scale(1);
   }
 }
 
