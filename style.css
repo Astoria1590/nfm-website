@@ -197,17 +197,45 @@
   z-index: 1;
 }
 
-/* Overlay Content */
+/* HERO LAYOUT (NEW) */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+/* GoFundMe (LEFT SIDE) */
+.gofundme-wrapper {
+  max-width: 320px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.gofundme-wrapper .gfm-embed {
+  transform: scale(0.85);
+  transform-origin: top left;
+}
+
+
+/* Overlay Content (UPDATED) */
 .hero-overlay {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  /* CHANGED */
+  align-items: flex-start;     /* was center */
   justify-content: center;
+
   height: 100%;
-  text-align: center;
+  text-align: left;            /* was center */
   padding: 0 20px;
+
+  max-width: 600px;           /* keeps it from stretching too wide */
 }
 
 .hero-overlay h1 {
@@ -227,7 +255,10 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+
+  /* CHANGED */
+  justify-content: flex-start; /* was center */
+
   margin-top: 20px;
 }
 
@@ -247,6 +278,32 @@
 .hero-btn:hover {
   background-color: #ffa733;
   transform: translateY(-3px);
+}
+
+
+/* MOBILE FIX (VERY IMPORTANT) */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gofundme-wrapper {
+    max-width: 100%;
+  }
+
+  .gofundme-wrapper .gfm-embed {
+    transform: scale(1);
+  }
+
+  .hero-overlay {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
 }
 
 /* Mobile-only styles */
