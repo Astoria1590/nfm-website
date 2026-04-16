@@ -1,0 +1,335 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: white;
+}
+
+/* POPUP */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.popup-box {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+.popup-box h2 {
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* subtle depth */
+}
+
+.nav-container {
+  max-width: 2200px; /* keeps everything aligned nicely */
+  margin: 0 auto;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px; /* 👈 control size cleanly */
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px; /* 👈 THIS fixes spacing */
+  align-items: center;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap; /* prevents weird wrapping */
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: rgb(0, 0, 0);
+  margin: 4px 0;
+}
+
+/* HERO */
+.hero-bubble {
+  background: rgba(255, 255, 255, 0.95); /* white bubble */
+  color: black;
+
+  padding: 30px 40px;
+  border-radius: 20px;
+
+  max-width: 600px;
+  margin: 0 auto;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+  text-align: center;
+}
+
+/* Text styling */
+.hero-bubble h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-bubble h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.hero-bubble p {
+  margin-bottom: 20px;
+}
+
+/* Button stays clean */
+.hero-bubble .btn {
+  background: black;
+  color: white;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+
+  background: url('https://newfaithministriesorg.wordpress.com/wp-content/uploads/2025/06/capture.png') center/cover no-repeat;
+  background-attachment: fixed; /* 🔥 makes it feel like video */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* THIS fixes spacing */
+}
+
+.btn {
+  padding: 12px 25px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* CONTENT */
+.content {
+  padding: 120px 20px;
+  background: #111;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgb(255, 255, 255);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .video-bg {
+    display: none;
+  }
+
+  .hero {
+    background: url('mobile-bg.jpg') center/cover no-repeat;
+  }
+}
+/* FOOTER */
+.footer {
+  background: #0d0d0d;
+  color: white;
+  padding: 50px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 🔥 3 equal columns */
+  align-items: start;
+}
+
+/* LOGO */
+/* LEFT */
+.footer-logo {
+  justify-self: start; /* far left */
+  text-align: left;
+}
+
+/* CENTER */
+.footer-links {
+  justify-self: center; /* perfect center */
+  text-align: center;
+}
+
+/* RIGHT */
+.footer-map {
+  justify-self: end; /* far right */
+}
+
+.footer-logo img {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* LINKS */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #c49b3f; /* 🔥 subtle gold accent */
+}
+
+/* MAP */
+.footer-map {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #222;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-map iframe {
+    height: 200px;
+  }
+}

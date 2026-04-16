@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Faith Ministries</title>
+  <link rel="stylesheet" href="hompage.css">
+</head>
+
+<body>
+
+  <!-- POPUP -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <button class="close-btn" id="closePopup">&times;</button>
+
+      <h2>Support Our Mission 🙏</h2>
+      <p>Your generosity helps us continue spreading faith and serving our community.</p>
+
+      <!-- GoFundMe Embed -->
+      <div class="gfm-embed"
+        data-url="https://www.gofundme.com/f/faith-in-action-a-brighter-future-for-new-faith-ministries/widget/large">
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+
+      <div class="logo">
+        <img src="https://newfaithministriesorg.wordpress.com/wp-content/uploads/2026/04/new-faith.png" alt="Church Logo">
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=directory_links" target="_blank">
+  Watch Live
+</a>
+        <a href="https://newfaithministries.churchcenter.com/giving">Give</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Join Us.html">Join us</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+ <section class="hero">
+  <div class="overlay"></div>
+
+<div class="hero-content">
+  <div class="hero-bubble">
+    <h1>Welcome to New Faith Ministries</h1>
+    <h2>Located in Brice, Ohio</h2>
+    <p>Feeding God's People Spiritually and Physically</p>
+    <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=about" class="btn">Watch Live</a>
+  </div>
+</div>
+</section>
+
+  <!-- CONTENT -->
+  <section class="content">
+    <h2>Our Mission</h2>
+    <p>
+      We are a church committed to spreading the Gospel, building community,
+      and helping people grow in their relationship with God.
+    </p>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://www.gofundme.com/static/js/embed.js" defer></script>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('closePopup');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Show popup after delay
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        popup.style.display = 'flex';
+      }, 1500);
+    });
+
+    // Close popup
+    closePopup.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    // Click outside to close
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- LEFT: LOGO -->
+    <div class="footer-logo">
+      <img src="https://newfaithministriesorg.wordpress.com/wp-content/uploads/2026/04/new-faith.png" alt="New Faith Ministries Logo">
+      <p>New Faith Ministries</p>
+    </div>
+
+    <!-- CENTER: LINKS -->
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=directory_links" target="_blank">Watch Live</a>
+      <a href="https://newfaithministries.churchcenter.com/giving">Give</a>
+      <a href="About Us.html">About Us</a>
+      <a href="Join Us.html">Join us</a>
+    </div>
+
+    <!-- RIGHT: MAP -->
+    <div class="footer-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d195836.76888899345!2d-82.8321789!3d39.920146!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88387cb273b0bc47%3A0x880dc48cea2d83c!2sNew%20Faith%20Ministries!5e0!3m2!1sen!2sus!4v1776277222034!5m2!1sen!2sus"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 New Faith Ministries. All rights reserved.</p>
+  </div>
+
+</footer>
+
+</body>
+</html>

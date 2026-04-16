@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us - New Faith Ministries</title>
+  <link rel="stylesheet" href="Join Us.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <img src="https://newfaithministriesorg.wordpress.com/wp-content/uploads/2026/04/new-faith.png" class="logo">
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#">Watch Live</a>
+      <a href="#">Give</a>
+      <a href="About Us.html">About Us</a>
+      <a href="Join Us.html">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="join-hero">
+  <div class="hero-bubble">
+    <h1>Join a Ministry</h1>
+    <p>Get connected. Grow in faith. Serve with purpose.</p>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section">
+  <div class="form-container">
+
+    <h2>Get Involved</h2>
+
+    <form id="joinForm">
+
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+
+      <select id="ministry" required>
+        <option value="">Select Ministry</option>
+        <option value="kids">Kids Ministry</option>
+        <option value="women">Women’s Ministry</option>
+        <option value="men">Men’s Ministry</option>
+        <option value="outreach">Homeless Outreach</option>
+      </select>
+
+      <textarea id="message" placeholder="Tell us about yourself..."></textarea>
+
+      <button type="submit">Join Now</button>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- LEFT: LOGO -->
+    <div class="footer-logo">
+      <img src="https://newfaithministriesorg.wordpress.com/wp-content/uploads/2026/04/new-faith.png" alt="New Faith Ministries Logo">
+      <p>New Faith Ministries</p>
+    </div>
+
+    <!-- CENTER: LINKS -->
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=directory_links" target="_blank">Watch Live</a>
+      <a href="https://newfaithministries.churchcenter.com/giving">Give</a>
+      <a href="About Us.html">About Us</a>
+      <a href="Join Us.html">Join us</a>
+    </div>
+
+    <!-- RIGHT: MAP -->
+    <div class="footer-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d195836.76888899345!2d-82.8321789!3d39.920146!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88387cb273b0bc47%3A0x880dc48cea2d83c!2sNew%20Faith%20Ministries!5e0!3m2!1sen!2sus!4v1776277222034!5m2!1sen!2sus"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 New Faith Ministries. All rights reserved.</p>
+  </div>
+
+</footer>
+
+<script>
+document.getElementById("joinForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    ministry: document.getElementById("ministry").value,
+    message: document.getElementById("message").value
+  };
+
+  await fetch("http://localhost:3000/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  alert("You're all set! We'll be in touch soon 🙏");
+});
+</script>
+
+</body>
+</html>
