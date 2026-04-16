@@ -2,31 +2,74 @@
 <html>
 <head>
   <title>Dashboard</title>
+
+  <!-- Excel Library -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
   <style>
     body {
       font-family: Arial;
       padding: 20px;
+      background: #f5f7fb;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 18px;
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #162c6b;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     th, td {
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
+      text-align: left;
     }
 
     th {
       background: #1e3a8a;
       color: white;
     }
+
+    tr:nth-child(even) {
+      background: #f2f2f2;
+    }
   </style>
 </head>
+
 <body>
 
-<h2>Ministry Signups</h2>
+<div class="top-bar">
+  <h2>Ministry Signups</h2>
+
+  <button onclick="downloadExcel()">⬇️ Download Excel</button>
+</div>
 
 <table>
   <thead>
@@ -48,6 +91,9 @@ if (!token) {
   window.location.href = "admin.html";
 }
 
+let globalData = [];
+
+// FETCH DATA
 fetch("https://nfm-backend.onrender.com/admin/signups", {
   headers: {
     "Authorization": token
@@ -55,6 +101,8 @@ fetch("https://nfm-backend.onrender.com/admin/signups", {
 })
 .then(res => res.json())
 .then(data => {
+  globalData = data;
+
   const table = document.getElementById("tableBody");
 
   data.forEach(item => {
@@ -70,6 +118,33 @@ fetch("https://nfm-backend.onrender.com/admin/signups", {
     table.innerHTML += row;
   });
 });
+
+// DOWNLOAD EXCEL
+function downloadExcel() {
+  const formatted = globalData.map(item => ({
+    Name: item.name,
+    Email: item.email,
+    Ministry: item.ministry,
+    Message: item.message,
+    Date: new Date(item.date).toLocaleString()
+  }));
+
+  const worksheet = XLSX.utils.json_to_sheet(formatted);
+
+  // column widths (makes it look nice)
+  worksheet['!cols'] = [
+    { wch: 20 },
+    { wch: 30 },
+    { wch: 20 },
+    { wch: 40 },
+    { wch: 25 }
+  ];
+
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Signups");
+
+  XLSX.writeFile(workbook, "NewFaith_Ministry_Signups.xlsx");
+}
 </script>
 
 </body>
