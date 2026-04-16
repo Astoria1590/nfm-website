@@ -53,6 +53,18 @@
   white-space: nowrap; /* prevents weird wrapping */
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: rgb(0, 0, 0);
+  margin: 4px 0;
+}
 
 /* HERO */
 .join-hero {
