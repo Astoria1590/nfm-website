@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NFM Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      color: #1e3a8a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* CONTENT */
+    .container {
+      max-width: 900px;
+      margin: 100px auto 40px;
+      padding: 0 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+
+    /* INPUT BOX */
+    .note-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* NOTES LIST */
+    .note {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .note small {
+      display: block;
+      margin-top: 5px;
+      color: gray;
+    }
+
+    .tag {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #1e3a8a;
+    }
+
+    .delete {
+      margin-top: 10px;
+      background: #dc2626;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">NFM Admin</div>
+  <div class="nav-links">
+    <a href="admin-home.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="notes.html">Notes</a>
+    <a href="#">Files</a>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <h1>Notes</h1>
+
+  <!-- INPUT -->
+  <div class="note-box">
+    <textarea id="noteText" placeholder="Write a note..."></textarea>
+
+    <input id="tagEmail" placeholder="Tag emails (comma separated)">
+
+    <button onclick="addNote()">Save Note</button>
+  </div>
+
+  <!-- NOTES -->
+  <div id="notesContainer"></div>
+
+</div>
+
+<script>
+let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+function renderNotes() {
+  const container = document.getElementById("notesContainer");
+  container.innerHTML = "";
+
+  notes.reverse().forEach((note, index) => {
+    const div = document.createElement("div");
+    div.className = "note";
+
+    div.innerHTML = `
+      <strong>${note.text}</strong>
+      <small>${note.date}</small>
+      <div class="tag">Tagged: ${note.tags.join(", ")}</div>
+      <button class="delete" onclick="deleteNote(${index})">Delete</button>
+    `;
+
+    container.appendChild(div);
+  });
+
+  notes.reverse();
+}
+
+function addNote() {
+  const text = document.getElementById("noteText").value;
+  const tags = document.getElementById("tagEmail").value.split(",");
+
+  if (!text) return;
+
+  notes.push({
+    text,
+    tags,
+    date: new Date().toLocaleString()
+  });
+
+  localStorage.setItem("notes", JSON.stringify(notes));
+
+  document.getElementById("noteText").value = "";
+  document.getElementById("tagEmail").value = "";
+
+  renderNotes();
+}
+
+function deleteNote(index) {
+  notes.splice(index, 1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  renderNotes();
+}
+
+renderNotes();
+</script>
+
+</body>
+</html>
