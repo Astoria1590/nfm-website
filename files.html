@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +55,7 @@
 <div class="navbar">
   <strong>NFM Admin</strong>
   <div class="nav-links">
-    <a href="admin-home.html">Home</a>
+    <a href="Admin Home.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="notes.html">Notes</a>
     <a href="sound.html">Sound</a>
@@ -71,18 +72,16 @@
 
   <input type="text" id="search" placeholder="Search..." oninput="filterFiles()">
 
-  <div id="files"></div>
+  <div id="fileList"></div>
 
 </div>
 
 <script>
 const token = localStorage.getItem("token");
-
 if (!token) window.location.href = "admin.html";
 
 let allFiles = [];
 
-/* LOAD FILES */
 function loadFiles() {
   fetch("https://nfm-backend.onrender.com/files", {
     headers: { Authorization: token }
@@ -94,9 +93,8 @@ function loadFiles() {
   });
 }
 
-/* RENDER */
 function renderFiles(files) {
-  const container = document.getElementById("files");
+  const container = document.getElementById("fileList");
   container.innerHTML = "";
 
   files.forEach(file => {
@@ -107,8 +105,8 @@ function renderFiles(files) {
       <strong>${file.name}</strong><br>
       <small>${new Date(file.date).toLocaleString()}</small><br><br>
 
-      <a href="https://nfm-backend.onrender.com/uploads/${file.url}" target="_blank">
-        <button>Download</button>
+      <a href="${file.url}" target="_blank">
+        <button>Open</button>
       </a>
 
       <button onclick="deleteFile('${file._id}')">Delete</button>
@@ -118,9 +116,10 @@ function renderFiles(files) {
   });
 }
 
-/* UPLOAD */
 function uploadFile() {
   const file = document.getElementById("fileInput").files[0];
+
+  if (!file) return alert("Select a file");
 
   const formData = new FormData();
   formData.append("file", file);
@@ -129,18 +128,18 @@ function uploadFile() {
     method: "POST",
     headers: { Authorization: token },
     body: formData
-  }).then(() => loadFiles());
+  })
+  .then(() => loadFiles());
 }
 
-/* DELETE */
 function deleteFile(id) {
   fetch(`https://nfm-backend.onrender.com/files/${id}`, {
     method: "DELETE",
     headers: { Authorization: token }
-  }).then(() => loadFiles());
+  })
+  .then(() => loadFiles());
 }
 
-/* SEARCH */
 function filterFiles() {
   const q = document.getElementById("search").value.toLowerCase();
 
@@ -156,3 +155,4 @@ loadFiles();
 
 </body>
 </html>
+```
