@@ -51,10 +51,12 @@
 
       <select id="ministry" required>
         <option value="">Select Ministry</option>
+        <option value="breakfast">Breakfast Ministry</option>
         <option value="kids">Kids Ministry</option>
         <option value="women">Women’s Ministry</option>
         <option value="men">Men’s Ministry</option>
         <option value="outreach">Homeless Outreach</option>
+        <option value="Pantry">Food Pantry</option>
       </select>
 
       <textarea id="message" placeholder="Tell us about yourself..."></textarea>
@@ -80,7 +82,7 @@
     <!-- CENTER: LINKS -->
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="https://www.facebook.com/profile.php?id=100064617012630&sk=directory_links" target="_blank">Watch Live</a>
+      <a href="Watch live.html" target="_blank">Watch Live</a>
       <a href="https://newfaithministries.churchcenter.com/giving">Give</a>
       <a href="About Us.html">About Us</a>
       <a href="Join Us.html">Join us</a>
@@ -129,11 +131,11 @@ document.getElementById("joinForm").addEventListener("submit", async function(e)
     const data = await response.text();
     console.log("SERVER RESPONSE:", data);
 
-    alert("You're all set! We'll be in touch soon 🙏");
+    alert("You're all set! We'll be in touch soon 🙏 <br> Please check your email and even your spam folder</br>");
 
   } catch (err) {
     console.error("FETCH ERROR:", err);
-    alert("Something went wrong");
+    alert("I'm sorry, your message did not go through");
   }
 });
 </script>
