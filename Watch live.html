@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Live | New Faith Ministries</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cbd5f5;
+      margin-bottom: 40px;
+    }
+
+    .options {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 20px;
+      padding: 30px;
+      flex: 1 1 250px;
+      max-width: 350px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+
+    .facebook {
+      background: #1877f2;
+    }
+
+    .youtube {
+      background: #ff0000;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Watch Live</h1>
+    <p>Join us live and be part of what God is doing. Choose your preferred platform below.</p>
+
+    <div class="options">
+
+      <!-- Facebook Option -->
+      <div class="card">
+        <h2>Facebook Live</h2>
+        <p>Watch directly on Facebook</p>
+
+        <!-- OPTION 1: BUTTON LINK -->
+        <a href="https://www.facebook.com/YOURPAGE/live" target="_blank" class="btn facebook">
+          Watch on Facebook
+        </a>
+
+        <!-- OPTION 2: EMBED (optional) -->
+        <!--
+        <iframe 
+          src="https://www.facebook.com/plugins/video.php?href=YOUR_VIDEO_LINK"
+          width="100%" height="200" style="border:none; overflow:hidden" scrolling="no" frameborder="0">
+        </iframe>
+        -->
+      </div>
+
+      <!-- YouTube Option -->
+      <div class="card">
+        <h2>YouTube Live</h2>
+        <p>Watch on YouTube</p>
+
+        <!-- BUTTON LINK -->
+        <a href="https://www.youtube.com/YOURCHANNEL/live" target="_blank" class="btn youtube">
+          Watch on YouTube
+        </a>
+
+        <!-- OPTIONAL EMBED -->
+        <!--
+        <iframe 
+          width="100%" height="200"
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+        -->
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
