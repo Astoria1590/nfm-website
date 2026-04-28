@@ -69,38 +69,40 @@
   </section>
 
   <!-- Scripts -->
-  <script src="https://www.gofundme.com/static/js/embed.js" defer></script>
+ <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const popup = document.getElementById('popup');
+  const closePopup = document.getElementById('closePopup');
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    const popup = document.getElementById('popup');
-    const closePopup = document.getElementById('closePopup');
-
+  if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+  }
 
-    // Show popup after delay
-    window.addEventListener('load', () => {
+  window.addEventListener('load', () => {
+    if (popup) {
       setTimeout(() => {
         popup.style.display = 'flex';
       }, 1500);
-    });
+    }
+  });
 
-    // Close popup
+  if (closePopup && popup) {
     closePopup.addEventListener('click', () => {
       popup.style.display = 'none';
     });
+  }
 
-    // Click outside to close
+  if (popup) {
     popup.addEventListener('click', (e) => {
       if (e.target === popup) {
         popup.style.display = 'none';
       }
     });
-  </script>
-
+  }
+</script>
 <!-- FOOTER -->
 <footer class="footer">
 
