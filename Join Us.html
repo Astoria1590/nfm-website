@@ -59,40 +59,42 @@
 
   </section>
 
-  <script>
-    const form = document.getElementById("signupForm");
-    const status = document.getElementById("status");
+<script>
+  const form = document.getElementById("signupForm");
+  const status = document.getElementById("status");
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        ministry: form.ministry.value,
-        message: form.message.value
-      };
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      ministry: form.ministry.value,
+      message: form.message.value
+    };
 
-      status.innerText = "Sending...";
+    status.innerText = "Sending...";
 
-      try {
-        const res = await fetch("/send", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
+    try {
+      const res = await fetch("https://nfm-website.onrender.com/send", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
 
-        if (res.ok) {
-          status.innerText = "✅ Submitted successfully! Check your email.";
-          form.reset();
-        } else {
-          status.innerText = "❌ Something went wrong.";
-        }
-      } catch (err) {
-        status.innerText = "❌ Server error.";
+      if (res.ok) {
+        status.innerText = "✅ Submitted successfully! Check your email.";
+        form.reset();
+      } else {
+        status.innerText = "❌ Something went wrong.";
       }
-    });
-  </script>
+    } catch (err) {
+      status.innerText = "❌ Server error.";
+    }
+  });
+</script>
 
 </body>
 </html>
