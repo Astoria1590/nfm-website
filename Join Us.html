@@ -13,66 +13,51 @@
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>You're Invited</h1>
-      <p>Experience Faith. Community. Purpose.</p>
-      <a href="#form" class="btn-primary">Plan Your Visit</a>
-    </div>
-  </section>
-
-  <!-- INFO -->
-  <section class="info">
-    <div class="card">
-      <h2>Service Times</h2>
-      <p>Sunday Worship - 10:30 AM</p>
-      <p>Wednesday Bible Study - 7:00 PM</p>
-    </div>
-
-    <div class="card">
-      <h2>Location</h2>
-      <p>New Faith Ministries</p>
-      <p>Columbus, Ohio</p>
-    </div>
-
-    <div class="card">
-      <h2>What to Expect</h2>
-      <p>Authentic worship, powerful teaching, and a welcoming community.</p>
+      <p class="tagline">You Belong Here!</p>
+      <h1>JOIN A MINISTRY</h1>
+      <p class="sub">Use your gifts. Grow in faith. Make an impact.</p>
+      <p class="scripture">✝ As each has received a gift, use it to serve one another. <br><strong>1 Peter 4:10</strong></p>
     </div>
   </section>
 
   <!-- FORM SECTION -->
   <section class="form-section" id="form">
-    <h2>Join a Ministry</h2>
 
-    <form id="signupForm">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
+    <div class="form-container">
+      <div class="form-header">
+        <h2>LET’S SERVE TOGETHER!</h2>
+        <p>Fill out the form below and our ministry leader will be in touch with you soon.</p>
+      </div>
 
-      <select name="ministry" required>
-        <option value="">Select Ministry</option>
-        <option value="kids">Kids Ministry</option>
-        <option value="women">Women's Ministry</option>
-        <option value="men">Men's Ministry</option>
-        <option value="men">Food Pantry Ministry</option>
-        <option value="men">Homeless Ministry</option>
-      </select>
+      <form id="signupForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
 
-      <textarea name="message" placeholder="Message (optional)"></textarea>
+        <select name="ministry" required>
+          <option value="">Select Ministry</option>
+          <option value="kids">Kids Ministry</option>
+          <option value="women">Women's Ministry</option>
+          <option value="men">Men's Ministry</option>
+          <option value="men">Food Pantry Ministry</option>
+          <option value="men">Homeless Ministry</option>
+        </select>
 
-      <button type="submit" class="btn-primary">Submit</button>
-    </form>
+        <textarea name="message" placeholder="Tell us how you’d like to get involved..."></textarea>
 
-    <p id="status"></p>
+        <button type="submit" class="btn-primary">Submit →</button>
+      </form>
+
+      <p id="status"></p>
+
+      <div class="form-footer">
+        <div>💜 <strong>Use Your Gifts</strong><br><span>Discover your purpose</span></div>
+        <div>✝ <strong>Grow In Faith</strong><br><span>Strengthen your relationship</span></div>
+        <div>👥 <strong>Make An Impact</strong><br><span>Be the hands and feet</span></div>
+      </div>
+
+    </div>
+
   </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <h2>We Can't Wait to Meet You</h2>
-    <p>Join us this weekend and be part of something greater.</p>
-  </section>
-
-  <footer>
-    <p>© 2026 New Faith Ministries</p>
-  </footer>
 
   <script>
     const form = document.getElementById("signupForm");
