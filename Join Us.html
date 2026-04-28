@@ -84,17 +84,21 @@
         body: JSON.stringify(data)
       });
 
+      const text = await res.text(); // 👈 IMPORTANT
+
       if (res.ok) {
         status.innerText = "✅ Submitted successfully! Check your email.";
         form.reset();
       } else {
-        status.innerText = "❌ Something went wrong.";
+        console.log("Server error:", text); // 👈 THIS WILL SHOW WHY
+        status.innerText = "❌ " + text;
       }
+
     } catch (err) {
+      console.log(err);
       status.innerText = "❌ Server error.";
     }
   });
 </script>
-
 </body>
 </html>
