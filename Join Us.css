@@ -1,4 +1,39 @@
-/* Join Us.css */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color:#fff;
+  background:#0d0d0d;
+}
+
+.hero {
+  position:relative;
+  min-height:100vh;
+  background:url('https://images.unsplash.com/photo-1507692049790-de58290a4334') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+
+.overlay { position:absolute; inset:0; background:rgba(0,0,0,0.7); }
+.hero-content { position:relative; z-index:2; }
+
+.hero h1 { font-size:clamp(2.2rem,5vw,3.5rem); }
+.hero p { margin:10px 0 20px; }
+
+.btn-primary {
+  padding:14px 28px;
+  background:linear-gradient(135deg,#ffd700,#ffb700);
+  color:#000;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,215,0,0.5);
+  transition:0.3s;
+}
 
 .btn-primary:hover {
   transform:scale(1.05);
